@@ -1,0 +1,29 @@
+package com.appuber.projectuber.entities;
+
+import com.appuber.projectuber.entities.enums.Roles;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.context.support.BeanDefinitionDsl;
+
+import java.util.Set;
+
+@Entity
+@Table(name="user_app")
+@Getter
+@Setter
+public class UserEntity {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private  String name;
+    @Column(unique = true)
+    private  String email;
+    private String password;
+
+    @ElementCollection(fetch=FetchType.LAZY)
+    @Enumerated(EnumType.STRING)
+    private Set<Roles> roles;
+}

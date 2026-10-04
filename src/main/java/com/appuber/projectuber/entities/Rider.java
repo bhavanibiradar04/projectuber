@@ -3,7 +3,6 @@ package com.appuber.projectuber.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.catalina.User;
 
 @Entity
 @Getter
@@ -14,6 +13,6 @@ public class Rider {
     private Long id;
     @OneToOne
     @JoinColumn(name="user_id")
-    private UserEntity  user;
+    private User user;
     private Double rating;
 }

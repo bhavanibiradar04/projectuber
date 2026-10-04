@@ -4,7 +4,6 @@ import com.appuber.projectuber.entities.enums.Roles;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.support.BeanDefinitionDsl;
 
 import java.util.Set;
 
@@ -12,7 +11,7 @@ import java.util.Set;
 @Table(name="user_app")
 @Getter
 @Setter
-public class UserEntity {
+public class User {
 
 
     @Id

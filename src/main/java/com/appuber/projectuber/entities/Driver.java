@@ -3,7 +3,6 @@ package com.appuber.projectuber.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import com.appuber.projectuber.entities.UserEntity;
 import org.springframework.data.geo.Point;
 
 @Entity
@@ -15,7 +14,7 @@ public class Driver {
     private Long id;
     @OneToOne
     @JoinColumn(name="user_id")
-    private UserEntity user;
+    private User user;
     private Double rating;
     private Boolean available;
     @Column(columnDefinition = "Geometry(Point,4326)")
